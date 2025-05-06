@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CommonForm from "../../common/form.jsx";
-import { recruiterSignUp } from "../../../config/index.js";
+import CommonForm from "../../common/form";
+import { recruiterSignUp } from "../../../config";
 import { Button } from "../../ui/button";
 
 const Index = () => {

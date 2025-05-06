@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Form1 from "./form1.jsx";
-import Form2 from "./form2.jsx";
-import Form3 from "./form3.jsx";
-import Form4 from "./form4.jsx";
-import Form5 from "./form5.jsx";
+import Form1 from "./form1";
+import Form2 from "./form2";
+import Form3 from "./form3";
+import Form4 from "./form4";
+import Form5 from "./form5";
 
 const Index = () => {
   const [formState, setFormState] = useState(1);

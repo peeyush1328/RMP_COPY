@@ -1,5 +1,5 @@
 import React from "react";
-import MatchesSubmissionComponent from "../../components/recruiter-view/matchesAndSubmission/index.jsx";
+import MatchesSubmissionComponent from "../../components/recruiter-view/matchesAndSubmission";
 
 const MatchesAndSubmission = () => {
   return (

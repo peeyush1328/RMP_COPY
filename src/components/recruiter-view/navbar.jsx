@@ -1,5 +1,5 @@
 import React from "react";
-import { BurgerIcon, GearIcon } from "../../utils/icon.jsx";
+import { BurgerIcon, GearIcon } from "../../utils/icon";
 
 const Navbar = () => {
   return (

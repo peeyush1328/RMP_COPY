@@ -1,5 +1,5 @@
 import React from "react";
-import CandidateProfile from "../../components/recruiter-view/candidates/index.jsx";
+import CandidateProfile from "../../components/recruiter-view/candidates";
 
 const Candidates = () => {
   return (

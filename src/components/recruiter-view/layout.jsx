@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./navbar.jsx";
+import Navbar from "./navbar";
 import {
   Bag,
   BellIcon,
@@ -8,7 +8,7 @@ import {
   Dash,
   Slate2,
   Users,
-} from "../../utils/icon.jsx";
+} from "../../utils/icon";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
 const dashboardMenu = [

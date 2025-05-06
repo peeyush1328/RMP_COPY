@@ -1,5 +1,5 @@
 import React from "react";
-import DashboardComponent from "../../components/recruiter-view/dashboard/index.jsx";
+import DashboardComponent from "../../components/recruiter-view/dashboard";
 
 const Dashboard = () => {
   return (
