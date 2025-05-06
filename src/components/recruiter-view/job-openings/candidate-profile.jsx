@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { ClockIcon, LocationIcon } from "../../../utils/icon";
+import { ClockIcon, LocationIcon } from "../../../utils/icon.jsx";
 
 const CandidateProfile = () => {
   return (

@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import RecruiterLayout from "./components/recruiter-view/layout.jsx";
-import ProfileSetup from "./pages/recruiter-view/Profile-setup.jsx";
+import ProfileSetup from "./pages/recruiter-view/profile-setup.jsx";
 import SignUp from "./pages/recruiter-view/sign-up.jsx";
 import JobOpenings from "./pages/recruiter-view/job-openings.jsx";
 import Dashboard from "./pages/recruiter-view/dashboard.jsx";

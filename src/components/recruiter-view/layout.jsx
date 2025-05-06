@@ -8,7 +8,7 @@ import {
   Dash,
   Slate2,
   Users,
-} from "../../utils/icon";
+} from "../../utils/icon.jsx";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
 const dashboardMenu = [
