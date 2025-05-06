@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Button } from "../../ui/button";
 import { Slate, Upload } from "../../../utils/icon";
-import { basicInformation, KycVerification } from "../../../config";
-import CommonForm from "../../common/form";
+import { basicInformation, KycVerification } from "../../../config/index.js";
+import CommonForm from "../../common/form.jsx";
 
 const Index = () => {
   const [formData, setFormData] = useState([]);

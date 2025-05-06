@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import HeroProfile from "../common/hero-profile";
+import HeroProfile from "../common/hero-profile.jsx";
 import { Input } from "../../ui/input";
 import { SearchIcon } from "../../../utils/icon";
 import {

@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../../components/recruiter-view/navbar";
-import ProfileSetupComponent from "../../components/recruiter-view/profle-setup";
+import Navbar from "../../components/recruiter-view/navbar.jsx";
+import ProfileSetupComponent from "../../components/recruiter-view/profle-setup/index.jsx";
 
 const ProfileSetup = () => {
   return (

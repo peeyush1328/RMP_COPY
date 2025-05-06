@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CommonForm from "../../common/form";
+import CommonForm from "../../common/form.jsx";
 import { recruiterSignUp } from "../../../config";
 import { Button } from "../../ui/button";
 

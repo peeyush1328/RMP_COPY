@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from "react";
-import JobOpeningComponent from "../../components/recruiter-view/job-openings";
-import JobDescription from "../../components/recruiter-view/job-openings/job-description";
+import JobOpeningComponent from "../../components/recruiter-view/job-openings/index.jsx";
+import JobDescription from "../../components/recruiter-view/job-openings/job-description.jsx";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
-import CandidateSelection from "../../components/recruiter-view/job-openings/candidates-selection";
-import CandidateProfile from "../../components/recruiter-view/job-openings/candidate-profile";
+import CandidateSelection from "../../components/recruiter-view/job-openings/candidates-selection.jsx";
+import CandidateProfile from "../../components/recruiter-view/job-openings/candidate-profile.jsx";
 
 const JobOpenings = () => {
   const [open, setOpen] = useState(false);
