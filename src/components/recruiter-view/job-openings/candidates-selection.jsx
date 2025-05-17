@@ -1,113 +1,25 @@
 import React, { Fragment } from "react";
 import { Input } from "../../ui/input";
-import { Bag, BlackBag, FilterIcon, SearchIcon } from "../../../utils/icon";
+import { BlackBag, FilterIcon, SearchIcon } from "../../../utils/icon";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "../../ui/button";
+import { convertMonthsToYearsAndMonths } from "../../../utils/objectUtils";
 
-const CandidateSelection = ({ setOpen2, show, button }) => {
-  const data = [
-    {
-      name: "Heeral Nant",
-      role: "Lead Product Designer",
-      appliedfor: "UX Designer",
-      skills: "Figma, UX Research",
-      experience: "3 Years",
-      lastUpdate: "2 Days ago",
-    },
-    {
-      name: "Heeral Nant",
-      role: "Lead Product Designer",
-      appliedfor: "UX Designer",
-      skills: "Figma, UX Research",
-      experience: "3 Years",
-      lastUpdate: "2 Days ago",
-    },
-    {
-      name: "Heeral Nant",
-      role: "Lead Product Designer",
-      appliedfor: "UX Designer",
-      skills: "Figma, UX Research",
-      experience: "3 Years",
-      lastUpdate: "2 Days ago",
-    },
-    {
-      name: "Heeral Nant",
-      role: "Lead Product Designer",
-      appliedfor: "UX Designer",
-      skills: "Figma, UX Research",
-      experience: "3 Years",
-      lastUpdate: "2 Days ago",
-    },
-    {
-      name: "Heeral Nant",
-      role: "Lead Product Designer",
-      appliedfor: "UX Designer",
-      skills: "Figma, UX Research",
-      experience: "3 Years",
-      lastUpdate: "2 Days ago",
-    },
-    {
-      name: "Heeral Nant",
-      role: "Lead Product Designer",
-      appliedfor: "UX Designer",
-      skills: "Figma, UX Research",
-      experience: "3 Years",
-      lastUpdate: "2 Days ago",
-    },
-    {
-      name: "Heeral Nant",
-      role: "Lead Product Designer",
-      appliedfor: "UX Designer",
-      skills: "Figma, UX Research",
-      experience: "3 Years",
-      lastUpdate: "2 Days ago",
-    },
-    {
-      name: "Heeral Nant",
-      role: "Lead Product Designer",
-      appliedfor: "UX Designer",
-      skills: "Figma, UX Research",
-      experience: "3 Years",
-      lastUpdate: "2 Days ago",
-    },
-    {
-      name: "Heeral Nant",
-      role: "Lead Product Designer",
-      appliedfor: "UX Designer",
-      skills: "Figma, UX Research",
-      experience: "3 Years",
-      lastUpdate: "2 Days ago",
-    },
-    {
-      name: "Heeral Nant",
-      role: "Lead Product Designer",
-      appliedfor: "UX Designer",
-      skills: "Figma, UX Research",
-      experience: "3 Years",
-      lastUpdate: "2 Days ago",
-    },
-    {
-      name: "Heeral Nant",
-      role: "Lead Product Designer",
-      appliedfor: "UX Designer",
-      skills: "Figma, UX Research",
-      experience: "3 Years",
-      lastUpdate: "2 Days ago",
-    },
-  ];
+const CandidateSelection = ({ setOpen2, show, button, applicants }) => {
   return (
     <Fragment>
       {" "}
-      <div className="hidden w-full min-h-screen p-6 bg-white outline outline-offset-[-1px] outline-neutral-400 lg:inline-flex flex-col justify-start items-start gap-9 overflow-hidden">
+      <div
+        className={`hidden w-full ${
+          button ? "min-h-screen" : ""
+        } p-6 bg-white outline outline-offset-[-1px] outline-neutral-400 lg:inline-flex flex-col justify-start items-start gap-9 overflow-hidden`}
+      >
         {show && (
           <div className="justify-start text-neutral-900 text-2xl font-medium leading-9">
             Select Candidates
@@ -118,7 +30,7 @@ const CandidateSelection = ({ setOpen2, show, button }) => {
             <Input
               type="search"
               placeholder="Enter job title, company, location"
-              className="appearance-none p-[12px] pl-[35px] rounded-[69px] border border-[#6945ED] focus-visible:ring-0 focus:border-[2px] focus:border-[#4E2FC0] placeholder:text-[13px] placeholder:text-[#A3A3A3]"
+              className="appearance-none p-[12px] pl-[35px] rounded-[69px] border border-[#6945ED] focus-visible:ring-0 focus:border-[2px] focus:border-[#4E2FC0] placeholder:text-sm placeholder:text-[#A3A3A3]"
             />
             <div className="absolute left-[12px] top-1/2 transform -translate-y-1/2">
               <SearchIcon className="h-[18px] w-[18px]" />
@@ -132,7 +44,7 @@ const CandidateSelection = ({ setOpen2, show, button }) => {
                 <div className="w-4 h-4">
                   <BlackBag className="h-full w-full" />
                 </div>
-                <div className="justify-center text-zinc-600 text-[12px] font-medium capitalize">
+                <div className="justify-center text-zinc-600 text-xs font-medium capitalize">
                   Applied For
                 </div>
               </div>
@@ -145,7 +57,7 @@ const CandidateSelection = ({ setOpen2, show, button }) => {
                 <div className="w-4 h-4">
                   <BlackBag className="h-full w-full" />
                 </div>
-                <div className="justify-center text-zinc-600 text-[12px] font-medium capitalize">
+                <div className="justify-center text-zinc-600 text-xs font-medium capitalize">
                   Experience
                 </div>
               </div>
@@ -158,7 +70,7 @@ const CandidateSelection = ({ setOpen2, show, button }) => {
                 <div className="w-4 h-4">
                   <BlackBag className="h-full w-full" />
                 </div>
-                <div className="justify-center text-zinc-600 text-[12px] font-medium capitalize">
+                <div className="justify-center text-zinc-600 text-xs font-medium capitalize">
                   Skills
                 </div>
               </div>
@@ -169,59 +81,59 @@ const CandidateSelection = ({ setOpen2, show, button }) => {
           <Table className="w-full border border-[#DADADA] rounded-[8px]">
             <TableHeader>
               <TableRow>
-                <TableHead className="px-[16px] py-[12px] w-[292px] text-[13px] text-[#101018] font-semibold">
+                <TableHead className="px-[16px] py-[12px] w-[292px] text-sm text-[#101018] font-semibold">
                   Owner
                 </TableHead>
-                <TableHead className="px-[16px] py-[12px] w-[164px] text-[13px] text-[#101018] font-semibold">
+                <TableHead className="px-[16px] py-[12px] w-[164px] text-sm text-[#101018] font-semibold">
                   Applied for
                 </TableHead>
-                <TableHead className="px-[16px] py-[12px] w-[164px] text-[13px] text-[#101018] font-semibold">
+                <TableHead className="px-[16px] py-[12px] w-[164px] text-sm text-[#101018] font-semibold">
                   Skills
                 </TableHead>
-                <TableHead className="px-[16px] py-[12px] w-[164px] text-[13px] text-[#101018] font-semibold">
+                <TableHead className="px-[16px] py-[12px] w-[164px] text-sm text-[#101018] font-semibold">
                   Experience
                 </TableHead>
-                <TableHead className="px-[16px] py-[12px] w-[164px] text-[13px] text-[#101018] font-semibold">
+                <TableHead className="px-[16px] py-[12px] w-[164px] text-sm text-[#101018] font-semibold">
                   Last Update
                 </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {data.map((item) => (
-                <TableRow key={item.name}>
+              {applicants?.data.map((item, i) => (
+                <TableRow key={i}>
                   <TableCell className="px-[16px] py-[12px] flex gap-[10px]">
-                    <Button
+                    <div
                       onClick={() => setOpen2(true)}
-                      className="cursor-pointer w-[36px] h-[36px] flex items-center justify-center"
+                      className="relative cursor-pointer w-[36px] h-[36px] "
                     >
                       <img
-                        src=""
-                        alt=""
-                        className="h-full w-full rounded-[50px]"
+                        src={item.profilePicture}
+                        alt={item.name}
+                        className="h-full w-full rounded-[50px] object-cover"
                       />
-                    </Button>
+                    </div>
                     <div className="flex flex-col">
-                      <div class="self-stretch justify-start text-[#35353A] text-sm font-bold leading-tight">
+                      <div className="self-stretch justify-start text-[#35353A] text-sm font-bold leading-tight">
                         {item.name}
                       </div>
-                      <div className="self-stretch justify-start text-[#6E6E71] text-[12px] font-normal leading-none">
-                        {item.role}
+                      <div className="self-stretch justify-start text-[#6E6E71] text-xs font-normal leading-none">
+                        {item.areaOfExpertise}
                       </div>
                     </div>
                   </TableCell>
                   <TableCell className="px-[16px] py-[12px]">
                     <div className="self-stretch justify-start text-[#35353A] text-sm font-normal leading-tight">
-                      {item.appliedfor}
+                      {item.roleLookingFor}
                     </div>
                   </TableCell>
                   <TableCell className="px-[16px] py-[12px]">
                     <div className="self-stretch justify-start text-[#35353A] text-sm font-normal leading-tight">
-                      {item.skills}
+                      {item.skills.join(", ")}
                     </div>
                   </TableCell>
                   <TableCell className="px-[16px] py-[12px]">
                     <div className="self-stretch justify-start text-[#35353A] text-sm font-normal leading-tight">
-                      {item.experience}
+                      {convertMonthsToYearsAndMonths(item.totalExperience)}
                     </div>
                   </TableCell>
                   <TableCell className="px-[16px] py-[12px]">
@@ -260,7 +172,7 @@ const CandidateSelection = ({ setOpen2, show, button }) => {
               <Input
                 type="search"
                 placeholder="Enter job title, company, location"
-                className="appearance-none p-[12px] pl-[35px] rounded-[69px] border border-[#6945ED] focus-visible:ring-0 focus:border-[1.5px] focus:border-[#4E2FC0] placeholder:text-[13px] placeholder:text-[#A3A3A3]"
+                className="appearance-none p-[12px] pl-[35px] rounded-[69px] border border-[#6945ED] focus-visible:ring-0 focus:border-[1.5px] focus:border-[#4E2FC0] placeholder:text-sm placeholder:text-[#A3A3A3]"
               />
               <div className="absolute left-[12px] top-1/2 transform -translate-y-1/2">
                 <SearchIcon className="h-[18px] w-[18px]" />
@@ -275,59 +187,59 @@ const CandidateSelection = ({ setOpen2, show, button }) => {
           <Table className="w-full border border-[#DADADA] rounded-[8px]">
             <TableHeader>
               <TableRow>
-                <TableHead className="px-[16px] py-[12px] w-[292px] text-[13px] text-[#101018] font-semibold">
+                <TableHead className="px-[16px] py-[12px] w-[292px] text-sm text-[#101018] font-semibold">
                   Owner
                 </TableHead>
-                <TableHead className="px-[16px] py-[12px] w-[164px] text-[13px] text-[#101018] font-semibold">
+                <TableHead className="px-[16px] py-[12px] w-[164px] text-sm text-[#101018] font-semibold">
                   Applied for
                 </TableHead>
-                <TableHead className="px-[16px] py-[12px] w-[164px] text-[13px] text-[#101018] font-semibold">
+                <TableHead className="px-[16px] py-[12px] w-[164px] text-sm text-[#101018] font-semibold">
                   Skills
                 </TableHead>
-                <TableHead className="px-[16px] py-[12px] w-[164px] text-[13px] text-[#101018] font-semibold">
+                <TableHead className="px-[16px] py-[12px] w-[164px] text-sm text-[#101018] font-semibold">
                   Experience
                 </TableHead>
-                <TableHead className="px-[16px] py-[12px] w-[164px] text-[13px] text-[#101018] font-semibold">
+                <TableHead className="px-[16px] py-[12px] w-[164px] text-sm text-[#101018] font-semibold">
                   Last Update
                 </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {data.map((item) => (
-                <TableRow key={item.name}>
+              {applicants?.data.map((item, index) => (
+                <TableRow key={index}>
                   <TableCell className="px-[16px] py-[12px] flex gap-[10px]">
-                    <Button
+                    <div
                       onClick={() => setOpen2(true)}
                       className="cursor-pointer w-[36px] h-[36px] flex items-center justify-center"
                     >
                       <img
-                        src=""
-                        alt=""
-                        className="h-full w-full rounded-[50px]"
+                        src={item.profilePicture}
+                        alt={item.name}
+                        className="h-full w-full rounded-[50px] object-cover"
                       />
-                    </Button>
+                    </div>
                     <div className="flex flex-col">
-                      <div class="self-stretch justify-start text-[#35353A] text-sm font-bold leading-tight">
+                      <div className="self-stretch justify-start text-[#35353A] text-sm font-bold leading-tight">
                         {item.name}
                       </div>
-                      <div className="self-stretch justify-start text-[#6E6E71] text-[12px] font-normal leading-none">
-                        {item.role}
+                      <div className="self-stretch justify-start text-[#6E6E71] text-xs font-normal leading-none">
+                        {item.areaOfExpertise}
                       </div>
                     </div>
                   </TableCell>
                   <TableCell className="px-[16px] py-[12px]">
                     <div className="self-stretch justify-start text-[#35353A] text-sm font-normal leading-tight">
-                      {item.appliedfor}
+                      {item.roleLookingFor}
                     </div>
                   </TableCell>
                   <TableCell className="px-[16px] py-[12px]">
                     <div className="self-stretch justify-start text-[#35353A] text-sm font-normal leading-tight">
-                      {item.skills}
+                      {item.skills.join(", ")}
                     </div>
                   </TableCell>
                   <TableCell className="px-[16px] py-[12px]">
                     <div className="self-stretch justify-start text-[#35353A] text-sm font-normal leading-tight">
-                      {item.experience}
+                      {convertMonthsToYearsAndMonths(item.totalExperience)}
                     </div>
                   </TableCell>
                   <TableCell className="px-[16px] py-[12px]">

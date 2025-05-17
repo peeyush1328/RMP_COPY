@@ -5,7 +5,8 @@ import { SearchIcon } from "../../../utils/icon";
 import CandidateSelection from "../job-openings/candidates-selection";
 import { Link } from "react-router-dom";
 
-const Index = () => {
+const Index = ({ applicants }) => {
+
   return (
     <Fragment>
       <div className="hidden lg:flex flex-col gap-[51px]">
@@ -29,13 +30,17 @@ const Index = () => {
             <Input
               type="search"
               placeholder="Enter job title, company, location"
-              className="appearance-none p-[12px] pl-[35px] rounded-[69px] border border-[#6945ED] focus-visible:ring-0 focus:border-[2px] focus:border-[#4E2FC0] placeholder:text-[13px] placeholder:text-[#A3A3A3]"
+              className="appearance-none p-[12px] pl-[35px] rounded-[69px] border border-[#6945ED] focus-visible:ring-0 focus:border-[2px] focus:border-[#4E2FC0] placeholder:text-sm placeholder:text-[#A3A3A3]"
             />
             <div className="absolute left-[12px] top-1/2 transform -translate-y-1/2">
               <SearchIcon className="h-[18px] w-[18px]" />
             </div>
           </div>
-          <CandidateSelection show={false} button={false} />
+          <CandidateSelection
+            show={false}
+            button={false}
+            applicants={applicants}
+          />
         </div>
       </div>
       <div className="w-full p-[24px] lg:hidden inline-flex flex-col justify-start items-start gap-6">
@@ -59,13 +64,17 @@ const Index = () => {
             <Input
               type="search"
               placeholder="Enter job title, company, location"
-              className="appearance-none p-[12px] pl-[35px] rounded-[69px] border border-[#6945ED] focus-visible:ring-0 focus:border-[2px] focus:border-[#4E2FC0] placeholder:text-[13px] placeholder:text-[#A3A3A3]"
+              className="appearance-none p-[12px] pl-[35px] rounded-[69px] border border-[#6945ED] focus-visible:ring-0 focus:border-[2px] focus:border-[#4E2FC0] placeholder:text-sm placeholder:text-[#A3A3A3]"
             />
             <div className="absolute left-[12px] top-1/2 transform -translate-y-1/2">
               <SearchIcon className="h-[18px] w-[18px]" />
             </div>
           </div>
-          <CandidateSelection show={false} button={false} />
+          <CandidateSelection
+            show={false}
+            button={false}
+            applicants={applicants}
+          />
         </div>
       </div>
     </Fragment>
